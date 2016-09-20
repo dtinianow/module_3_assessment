@@ -1,14 +1,15 @@
-<h1><%= @stores.count %> Total Stores </h1>
+<h1><%= @count %> Total Stores </h1>
 
-<table>
+<table class='results'>
   <th>
     <td>Name</td>
     <td>City</td>
     <td>Distance</td>
     <td>Phone Number</td>
+    <td>Store Type</td>
   </th>
   <% @stores.each do |store| %>
-  <tr>
+  <tr class='store'>
     <td><%= store.full_name %></td>
     <td><%= store.city %></td>
     <td><%= store.distance %></td>
