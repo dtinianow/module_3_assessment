@@ -13,7 +13,7 @@ attr_reader :full_name,
     @distance     = store_params[:distance]
     @phone_number = store_params[:phone]
     @type         = store_params[:storeType]
-    @id           = store_params[:id]
+    @id           = store_params[:storeId]
   end
 
   def self.service
@@ -31,6 +31,6 @@ attr_reader :full_name,
   end
 
   def self.find_by_id(id)
-    service.get_store_by_id
+    service.get_store_by_id(id)[:stores]
   end
 end

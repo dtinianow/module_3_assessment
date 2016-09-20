@@ -10,7 +10,7 @@
   </th>
   <% @stores.each do |store| %>
   <tr class='store'>
-    <td><%= link_to store.full_name, store_path(store) %></td>
+    <td><%= link_to store.full_name, store_path(store.id) %></td>
     <td><%= store.city %></td>
     <td><%= store.distance %></td>
     <td><%= store.phone_number %></td>
