@@ -1,0 +1,15 @@
+one:
+  id: 1
+  name: Robot
+  description: Beep boop
+  image_url: 'https://www.goodfreephotos.com/albums/vector-images/blue-robot-vector-art.png'
+  created_at: '2012-03-25T09:54:09.000Z'
+  updated_at: '2012-03-25T09:54:09.000Z'
+
+two:
+  id: 2
+  name: Robotron
+  description: Boop boop beep
+  image_url: 'https://www.goodfreephotos.com/albums/vector-images/blue-robot-vector-art.png'
+  created_at: '2012-03-26T09:54:09.000Z'
+  updated_at: '2012-03-26T09:54:09.000Z'
