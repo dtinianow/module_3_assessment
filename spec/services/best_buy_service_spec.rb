@@ -4,8 +4,8 @@ describe BestBuyService do
   context '#get_stores_by_zip_code' do
     it 'returns a list of stores based on zip code' do
       VCR.use_cassette('best_buy_service_get_stores_by_zip_code') do
-        zip_code = 80202
 
+        zip_code = 80202
         raw_stores = BestBuyService.new.get_stores_by_zip_code(zip_code)
         total     = raw_stores[:total]
         stores    = raw_stores[:stores]
