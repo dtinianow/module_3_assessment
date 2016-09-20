@@ -18,10 +18,14 @@ attr_reader :full_name,
     BestBuyService.new
   end
 
-  def self.find_all(zipcode)
-    service.get_stores(zipcode)[:stores].map do |store|
+  def self.find_all_by_zip_code(zip_code)
+    service.get_stores_by_zip_code(zip_code)[:stores].map do |store|
       new(store)
     end
+  end
+
+  def self.total_count_by_zip_code(zip_code)
+    service.get_stores_by_zip_code(zip_code)[:total]
   end
 
 end

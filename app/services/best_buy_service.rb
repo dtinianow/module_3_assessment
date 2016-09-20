@@ -8,9 +8,9 @@ class BestBuyService
     end
   end
 
-  def get_stores(zipcode)
+  def get_stores_by_zip_code(zip_code)
     response = conn.get do |req|
-      req.url ("stores(area(#{zipcode},25))")
+      req.url ("stores(area(#{zip_code},25))")
       req.params['apiKey'] = ENV['BEST_BUY_KEY']
       req.params['format'] = 'json'
       req.params['pageSize'] = '15'
