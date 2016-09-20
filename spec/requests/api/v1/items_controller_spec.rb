@@ -30,6 +30,22 @@ describe "Items" do
     expect(item['description']).to eq('Boop boop beep')
   end
 
+  it 'can create an item' do
+    item_params = { name: "Brobot",
+                    description: "The broiest robot",
+                    image_url: 'http://robohash.org/1.png?set=set2&bgset=bg1&size=200x200'
+    }
+
+    post "/api/v1/items", item: item_params
+    item = Item.last
+
+    expect(response.status).to eq 201
+    expect(item['name']).to eq 'Brobot'
+    expect(item['description']).to eq 'The broiest robot'
+    expect(item['image_url']).to eq 'http://robohash.org/1.png?set=set2&bgset=bg1&size=200x200'
+  end
+
+
   it 'can delete an item' do
     item = items(:one)
 
