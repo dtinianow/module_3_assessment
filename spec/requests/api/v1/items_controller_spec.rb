@@ -16,8 +16,6 @@ describe "Items" do
     expect(item['id']).to eq(1)
     expect(item['name']).to eq("Robot")
     expect(item['description']).to eq("Beep boop")
-    expect(page).to_not have_content "created_at"
-    expect(page).to_not have_content "updated_at"
   end
 
   it 'can return JSON data on a specific item' do
@@ -30,8 +28,6 @@ describe "Items" do
     expect(item['id']).to eq(2)
     expect(item['name']).to eq('Robotron')
     expect(item['description']).to eq('Boop boop beep')
-    expect(page).to_not have_content "created_at"
-    expect(page).to_not have_content "updated_at"
   end
 
   it 'can create an item' do
@@ -47,8 +43,6 @@ describe "Items" do
     expect(item['name']).to eq 'Brobot'
     expect(item['description']).to eq 'The broiest robot'
     expect(item['image_url']).to eq 'http://robohash.org/1.png?set=set2&bgset=bg1&size=200x200'
-    expect(page).to_not have_content "created_at"
-    expect(page).to_not have_content "updated_at"
   end
 
 
