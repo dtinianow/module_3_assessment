@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "User can search for stores" do
   scenario "they see 15 stores within 25 miles of the zip_code 80202" do
-    VCR.use_cassette('store_service_get_stores_by_zip_code') do
+    VCR.use_cassette('best_buy_service_get_stores_by_zip_code') do
 
       visit '/'
       within('.search-field') do

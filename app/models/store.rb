@@ -27,5 +27,4 @@ attr_reader :full_name,
   def self.total_count_by_zip_code(zip_code)
     service.get_stores_by_zip_code(zip_code)[:total]
   end
-
 end
