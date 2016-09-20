@@ -19,7 +19,7 @@ attr_reader :full_name,
   end
 
   def self.find_all(zipcode)
-    service.get_stores(zipcode).map do |store|
+    service.get_stores(zipcode)[:stores].map do |store|
       new(store)
     end
   end
