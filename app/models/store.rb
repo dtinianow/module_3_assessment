@@ -14,4 +14,14 @@ attr_reader :full_name,
     @type         = store_params[:storeType]
   end
 
+  def self.service
+    BestBuyService.new
+  end
+
+  def self.find_all(zipcode)
+    service.get_stores(zipcode).map do |store|
+      new(store)
+    end
+  end
+
 end
