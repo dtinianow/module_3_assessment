@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "Items" do
   fixtures :items
 
-  it 'returns JSON data on all items' do
+  it 'can return JSON data on all items' do
     get '/api/v1/items'
 
     items = JSON.parse(response.body)
@@ -18,7 +18,7 @@ describe "Items" do
     expect(item['description']).to eq("Beep boop")
   end
 
-  it 'returns JSON data on a specific item' do
+  it 'can return JSON data on a specific item' do
     get '/api/v1/items/2'
 
     item = JSON.parse(response.body)
@@ -28,5 +28,13 @@ describe "Items" do
     expect(item['id']).to eq(2)
     expect(item['name']).to eq('Robotron')
     expect(item['description']).to eq('Boop boop beep')
+  end
+
+  it 'can delete an item' do
+    item = items(:one)
+
+    delete "/api/v1/items/#{item.id}"
+
+    expect(response.status).to eq 204
   end
 end

@@ -7,8 +7,15 @@ class Api::V1::ItemsController < ApplicationController
   def show
     render json: Item.find(params[:id])
   end
-end
 
+  def destroy
+    if Item.destroy(params[:id])
+      render :nothing => true, :status => 204
+    else
+      render "The item you are trying to delete does not exist"
+    end
+  end
+end
 # We need an API for the application that can both read and write data. Start by focusing on functionality for items. All of this should happen in a dedicated, versioned controller.
 #
 # When I send a GET request to `/api/v1/items`
