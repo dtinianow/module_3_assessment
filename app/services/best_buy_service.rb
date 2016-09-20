@@ -19,6 +19,16 @@ class BestBuyService
     parse(response)
   end
 
+  def get_store_by_id(id)
+    response = conn.get do |req|
+      req.url ("stores(storeId=#{id})")
+      req.params['apiKey'] = ENV['BEST_BUY_KEY']
+      req.params['format'] = 'json'
+      req.params['show'] = 'longName,city,address,state,postalCode,storeId,hours'
+    end
+    parse(response)
+  end
+
   private
 
   def conn

@@ -4,7 +4,8 @@ attr_reader :full_name,
             :city,
             :distance,
             :phone_number,
-            :type
+            :type,
+            :id
 
   def initialize(store_params)
     @full_name    = store_params[:longName]
@@ -27,5 +28,9 @@ attr_reader :full_name,
 
   def self.total_count_by_zip_code(zip_code)
     service.get_stores_by_zip_code(zip_code)[:total]
+  end
+
+  def self.find_by_id(id)
+    service.get_store_by_id
   end
 end
