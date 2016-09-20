@@ -12,6 +12,7 @@ attr_reader :full_name,
     @distance     = store_params[:distance]
     @phone_number = store_params[:phone]
     @type         = store_params[:storeType]
+    @id           = store_params[:id]
   end
 
   def self.service

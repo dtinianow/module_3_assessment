@@ -14,7 +14,7 @@ class BestBuyService
       req.params['apiKey'] = ENV['BEST_BUY_KEY']
       req.params['format'] = 'json'
       req.params['pageSize'] = '15'
-      req.params['show'] = 'longName,city,distance,phone,storeType'
+      req.params['show'] = 'longName,city,distance,phone,storeType,storeId'
     end
     parse(response)
   end
