@@ -17,4 +17,16 @@ describe "Items" do
     expect(item['name']).to eq("Robot")
     expect(item['description']).to eq("Beep boop")
   end
+
+  it 'returns JSON data on a specific item' do
+    get '/api/v1/items/2'
+
+    item = JSON.parse(response.body)
+
+    expect(response).to be_success
+    expect(item.class).to eq(Hash)
+    expect(item['id']).to eq(2)
+    expect(item['name']).to eq('Robotron')
+    expect(item['description']).to eq('Boop boop beep')
+  end
 end

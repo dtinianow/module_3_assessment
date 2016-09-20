@@ -3,6 +3,10 @@ class Api::V1::ItemsController < ApplicationController
   def index
     render json: Item.all
   end
+
+  def show
+    render json: Item.find(params[:id])
+  end
 end
 
 # We need an API for the application that can both read and write data. Start by focusing on functionality for items. All of this should happen in a dedicated, versioned controller.
